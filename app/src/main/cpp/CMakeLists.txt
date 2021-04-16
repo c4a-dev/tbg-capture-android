@@ -21,11 +21,16 @@ message(STATUS "CONAN_LIBS=${CONAN_LIBS}")
 add_library(tbg-capture
         SHARED
         native-lib.cpp
+        android_camera.c
 )
 
 # Link the library
 find_library(log-lib log)
+find_library(android-lib android)
+message(STATUS "CONAN_LIBS=${CONAN_LIBS}")
 target_link_libraries(tbg-capture
+        ${android-lib}
         ${log-lib}
         ${CONAN_LIBS}
+        /Users/mtownsend/work/c4a/tbg-capture-android/gstreamer/gst-build-arm64-v8a/libgstreamer_android.so
 )

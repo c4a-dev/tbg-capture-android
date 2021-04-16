@@ -6,14 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <ImageButton
+                android:id="@+id/play_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_media_pause" />
+
+            <include
+                android:id="@+id/autofocus"
+                layout="@layout/autofocus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/resolution"
+                layout="@layout/resolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/white_balance_view"
+                layout="@layout/white_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

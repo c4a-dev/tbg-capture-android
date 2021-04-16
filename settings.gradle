@@ -1,2 +1,4 @@
+include ':gstreamer'
+
 include ':app'
 rootProject.name = "Teebox Golf - Capture"

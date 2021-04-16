@@ -10,12 +10,12 @@ import android.content.Context;
 import android.content.res.AssetManager;
 
 public class GStreamer {
-    //private static native void nativeInit(Context context) throws Exception;
+    private static native void nativeInit(Context context) throws Exception;
 
     public static void init(Context context) throws Exception {
         copyCaCertificates(context);
         copyFonts(context);
-        //nativeInit(context);
+        nativeInit(context);
     }
 
     private static void copyFonts(Context context) {

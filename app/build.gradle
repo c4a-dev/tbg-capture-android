@@ -5,7 +5,6 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
-
     ndkVersion "22.1.7171670"
 
     defaultConfig {
@@ -64,10 +63,11 @@ task conanInstall {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation project(':gstreamer')
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
