@@ -1,0 +1,6 @@
+[requires]
+c4a_core/0.0.1@tbg-dev/stable
+gstreamer-prebuilt/1.18.4@tbg-dev/stable
+
+[generators]
+make
